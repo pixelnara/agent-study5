@@ -5,6 +5,9 @@ on:
     - cron: '0 23 * * *'   # 매일 오전 08:00 KST (= 전날 23:00 UTC)
     - cron: '0 10 * * *'   # 매일 오후 07:00 KST (= 당일 10:00 UTC)
   workflow_dispatch:        # 수동 실행 버튼 (테스트용)
+  push:
+    branches:
+      - main               # main 브랜치에 코드 올릴 때도 실행 (스케줄 활성화용)
 
 jobs:
   run-briefing:

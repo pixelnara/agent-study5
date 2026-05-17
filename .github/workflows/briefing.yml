@@ -2,7 +2,7 @@ name: 글로벌 일일 브리핑
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # 임시: 5분마다 실행 (테스트용 — 11시 이후 원래대로 변경)
+    - cron: '*/2 * * * *'  # 임시: 2분마다 실행 (테스트용)
   workflow_dispatch:        # 수동 실행 버튼 (테스트용)
   push:
     branches:

@@ -3,13 +3,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 missing = []
-if not ANTHROPIC_API_KEY:
-    missing.append("ANTHROPIC_API_KEY")
+if not OPENAI_API_KEY:
+    missing.append("OPENAI_API_KEY")
 if not TELEGRAM_BOT_TOKEN:
     missing.append("TELEGRAM_BOT_TOKEN")
 if not TELEGRAM_CHAT_ID:

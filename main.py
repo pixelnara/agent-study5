@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 글로벌 일일 브리핑 자동화 시스템
-- 매일 오전 9:55 실행 → 오전 10:00 텔레그램 수신 목표
-- 전날 10:01 ~ 당일 09:59 의 24시간 데이터를 수집합니다
+- 매일 오전 6시 · 오후 6시(KST) 실행 → 텔레그램 수신
+- 직전 12시간 데이터를 수집합니다 (하루 2회 발송 간 겹침 방지)
 """
 
 import sys
@@ -37,7 +37,7 @@ def main():
 
         # 2단계: 뉴스 수집
         log('2/4 뉴스 수집 중...')
-        news_data = NewsAgent(hours_back=24).fetch_all()
+        news_data = NewsAgent(hours_back=12).fetch_all()
 
         # 3단계: AI 요약 생성
         log('3/4 AI 브리핑 생성 중...')

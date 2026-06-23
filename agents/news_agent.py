@@ -1,6 +1,7 @@
 """
 뉴스 수집 에이전트
-- 무료 RSS 피드를 사용해 24시간 이내 기사를 수집합니다
+- 무료 RSS 피드를 사용해 12시간 이내 기사를 수집합니다
+  (하루 2회 발송 시 발송 간 뉴스 겹침 방지)
 - 추가 API 키 없이 동작합니다
 """
 
@@ -45,7 +46,7 @@ RSS_FEEDS = {
 
 class NewsAgent:
 
-    def __init__(self, hours_back: int = 24):
+    def __init__(self, hours_back: int = 12):
         now = datetime.now(KST)
         self.cutoff = now - timedelta(hours=hours_back)
 
